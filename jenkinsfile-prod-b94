@@ -19,7 +19,7 @@ pipeline {
             }          
             post {
                 success {
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat-admin-user', path: '', url: 'http://172.31.29.76:8080')], contextPath: '/prod-login', onFailure: false, war: '**/*.war'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat-admin-user', path: '', url: 'http://172.31.88.90:8080')], contextPath: '/prod-login', onFailure: false, war: '**/*.war'
                 }
                 failure {
                     echo "OMG ! The build failed"

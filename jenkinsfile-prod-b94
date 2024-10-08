@@ -6,14 +6,10 @@ pipeline {
         maven "maven"
     }
 
-    parameters {
-       choice(name: 'BRANCH', choices: ['master', 'stage'], description: 'Choose branch')
-    }
-
     stages {
         stage('fetch the code') {
             steps {
-               git branch: '${params.BRANCH}', credentialsId: 'github-cred', url: 'https://github.com/devopscloudsre/java-db-Login.git'
+               git branch: 'master', credentialsId: 'github-cred', url: 'https://github.com/azuoni07/java-db-Login.git'
             }
         }
             
